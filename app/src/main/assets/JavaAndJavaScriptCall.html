@@ -1,0 +1,40 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script type="text/javascript">
+
+        function javaCallJs(){
+            document.getElementById("content").innerHTML += "<br\>java调用了js无参函数";
+        }
+
+        function javaCallJsLogin(name,pass){
+            if(name == "123456" && pass == "123456"){
+                document.getElementById("content").innerHTML = ("欢迎："+name );
+            }else{
+                document.getElementById("content").innerHTML = ("登录失败" );
+                alert("登录失败!");
+            }
+        }
+
+        function showDialog(){
+            alert("大家好,我是javascript弹出的alert");
+        }
+
+    </script>
+
+
+</head>
+
+
+<body>
+
+<div align="left" id="content">测试</div>
+<div align="right">测试Android调用js</div>
+
+
+<input type="button" value="点击这里调用Android代码" onclick="window.Android.showToast('xxxxxx')"/>
+<button onclick="javaCallJsLogin('aaa','bbb')">测试</button>
+</body>
+
+
+</html>

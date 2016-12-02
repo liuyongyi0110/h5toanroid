@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <title>移动版</title>
+    <link href="RealNetJSCallJavaActivity_files/phone_item_400500.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<link id="font_size" href="" type="text/css" rel="stylesheet">
+<div class="news">
+    <div class="news_cont" id="news_cont">
+        <div class="mv_box">
+            <div class="mv_box_div">
+                <!-- 播放按鈕 -->
+                <p><a id="play" tag="video"><img src="RealNetJSCallJavaActivity_files/stop.png"></a></p>
+            </div>
+            <!-- 缩略图 -->
+            <img src="RealNetJSCallJavaActivity_files/mpic65411h572d6eaf.jpg" width="100%">
+        </div>
+
+    </div>
+
+</div>
+<script src="RealNetJSCallJavaActivity_files/wqNewsFunc.js"></script>
+<script src="RealNetJSCallJavaActivity_files/wqNewsLib.js"></script>
+
+<script>
+    url = "/mobiles/interActive/65411";
+    var videourl = "http://uushow.s.qupai.me/v/aa876a53-725d-4848-b5fe-d9b4801e7679.mp4?token=MWM2YmU1MDdkNTkxNDU2OTlkNWQ4YTljY2FkMmZjNDEtYjUzYjNhM2Q2YWI5MGNlMDI2ODIyOTE1MWM5YmRlMTE";
+    var itemid = "65411";
+    var itemtitle = "调用android播放视频";
+    var obj_play = document.getElementById('play');
+    if(obj_play != null) {
+        obj_play.ontouchstart = function() {
+            this.className = 'inter_click';
+            javascript:android.playVideo(itemid, videourl, itemtitle);
+            ajaxrequest('/stat/item', "POST", true, {type:'play', id:itemid});
+        }
+    }
+
+
+</script>
+
+
+
+
+</body></html>
